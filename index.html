@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кімнатні рослини</title>
+</head>
+<body>
+  <a href="#catalog">Перейти до каталогу</a>
+
+  <header>
+    <p>
+      <a href="#catalog">
+        <img src="images/logo.svg" width="40" height="40" alt="">
+        Зелений дім
+      </a>
+    </p>
+
+    <nav aria-label="Основна навігація">
+      <ul>
+        <li><a href="#catalog">Каталог</a></li>
+        <li><a href="#item">Рослина</a></li>
+        <li><a href="#add">Додати рослину</a></li>
+      </ul>
+    </nav>
+
+    <search>
+      <form action="#catalog" method="get">
+        <label for="search">Пошук рослини</label>
+        <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
+        <button type="submit">Знайти</button>
+      </form>
+    </search>
+  </header>
+
+  <main>
+    <section id="catalog" aria-labelledby="catalog-title">
+      <h1 id="catalog-title">Кімнатні рослини</h1>
+
+      <nav aria-label="Категорії каталогу">
+        <ul>
+          <li><a href="#catalog" aria-current="page">Усі рослини</a></li>
+          <li><a href="#catalog">Яскраве світло</a></li>
+          <li><a href="#catalog">Розсіяне світло</a></li>
+          <li><a href="#catalog">Півтінь</a></li>
+        </ul>
+      </nav>
+
+      <form action="#catalog" method="get">
+        <label for="sort">Сортувати</label>
+        <select id="sort" name="sort">
+          <option value="name" selected>за назвою</option>
+          <option value="water-asc">за поливом: спочатку частіше</option>
+          <option value="water-desc">за поливом: спочатку рідше</option>
+        </select>
+        <button type="submit">Застосувати</button>
+      </form>
+
+      <ul>
+        <li>
+          <article id="item">
+            <h2><a href="#item">Монстера</a></h2>
+            <p>
+              <img src="images/monstera-320w.jpg"
+                   srcset="images/monstera-320w.jpg 320w, images/monstera-800w.jpg 800w"
+                   sizes="(max-width: 600px) 320px, 800px"
+                   width="320" height="240"
+                   alt="Монстера з великим розрізаним листям">
+            </p>
+            <p>Світло: розсіяне</p>
+            <p>Полив: раз на <data value="7">7 днів</data></p>
+            <p>Максимальна висота: до 300 см</p>
+            <p>Пересадка: <time datetime="2027-04">квітень</time></p>
+            <p>Безпечна для тварин: ні</p>
+            <p>Велика ліана з декоративним листям. Любить вологе повітря та потребує опори для росту.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2><a href="#item">Сансев'єрія</a></h2>
+            <p>
+              <img src="images/sansevieria-320w.jpg"
+                   srcset="images/sansevieria-320w.jpg 320w, images/sansevieria-800w.jpg 800w"
+                   sizes="(max-width: 600px) 320px, 800px"
+                   width="320" height="240"
+                   alt="Сансев'єрія з прямим смугастим листям"
+                   loading="lazy">
+            </p>
+            <p>Світло: півтінь</p>
+            <p>Полив: раз на <data value="14">14 днів</data></p>
+            <p>Максимальна висота: до 120 см</p>
+            <p>Пересадка: <time datetime="2027-03">березень</time></p>
+            <p>Безпечна для тварин: ні</p>
+            <p>Дуже витривала рослина для початківців. Переносить посуху та нестачу світла.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2><a href="#item">Хлорофітум</a></h2>
+            <p>
+              <img src="images/chlorophytum-320w.jpg"
+                   srcset="images/chlorophytum-320w.jpg 320w, images/chlorophytum-800w.jpg 800w"
+                   sizes="(max-width: 600px) 320px, 800px"
+                   width="320" height="240"
+                   alt="Хлорофітум з довгим смугастим листям"
+                   loading="lazy">
+            </p>
+            <p>Світло: розсіяне</p>
+            <p>Полив: раз на <data value="5">5 днів</data></p>
+            <p>Максимальна висота: до 60 см</p>
+            <p>Пересадка: <time datetime="2027-04">квітень</time></p>
+            <p>Безпечна для тварин: так</p>
+            <p>Невибаглива рослина, яка добре очищає повітря і легко розмножується.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2><a href="#item">Калатея</a></h2>
+            <p>
+              <img src="images/calathea-320w.jpg"
+                   srcset="images/calathea-320w.jpg 320w, images/calathea-800w.jpg 800w"
+                   sizes="(max-width: 600px) 320px, 800px"
+                   width="320" height="240"
+                   alt="Калатея з візерунчастим листям"
+                   loading="lazy">
+            </p>
+            <p>Світло: півтінь</p>
+            <p>Полив: раз на <data value="4">4 дні</data></p>
+            <p>Максимальна висота: до 80 см</p>
+            <p>Пересадка: <time datetime="2027-05">травень</time></p>
+            <p>Безпечна для тварин: так</p>
+            <p>Рослина з яскравим візерунком на листі. Потребує м'якої води та високої вологості.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2><a href="#item">Фікус Бенджаміна</a></h2>
+            <p>
+              <img src="images/ficus-320w.jpg"
+                   srcset="images/ficus-320w.jpg 320w, images/ficus-800w.jpg 800w"
+                   sizes="(max-width: 600px) 320px, 800px"
+                   width="320" height="240"
+                   alt="Фікус Бенджаміна з дрібним глянцевим листям"
+                   loading="lazy">
+            </p>
+            <p>Світло: яскраве</p>
+            <p>Полив: раз на <data value="7">7 днів</data></p>
+            <p>Максимальна висота: до 300 см</p>
+            <p>Пересадка: <time datetime="2027-03">березень</time></p>
+            <p>Безпечна для тварин: ні</p>
+            <p>Деревце з густою кроною. Не любить переставлянь і протягів.</p>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2><a href="#item">Ехеверія</a></h2>
+            <p>
+              <img src="images/echeveria-320w.jpg"
+                   srcset="images/echeveria-320w.jpg 320w, images/echeveria-800w.jpg 800w"
+                   sizes="(max-width: 600px) 320px, 800px"
+                   width="320" height="240"
+                   alt="Ехеверія — сукулент із щільною розеткою листя"
+                   loading="lazy">
+            </p>
+            <p>Світло: яскраве</p>
+            <p>Полив: раз на <data value="14">14 днів</data></p>
+            <p>Максимальна висота: до 25 см</p>
+            <p>Пересадка: <time datetime="2027-04">квітень</time></p>
+            <p>Безпечна для тварин: так</p>
+            <p>Компактний сукулент для сонячного підвіконня. Поливати лише після просихання ґрунту.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="add" aria-labelledby="add-title">
+      <h2 id="add-title">Додати рослину</h2>
+      <form action="#add" method="post">
+        <p>
+          <label for="water">Полив, раз на скільки днів</label>
+          <input id="water" name="water" type="number" required min="1" max="60" step="1" placeholder="7">
+        </p>
+
+        <p>
+          <label for="repot">Місяць пересадки</label>
+          <input id="repot" name="repot" type="text" required maxlength="20" placeholder="Квітень" pattern="^[А-Яа-яІіЇїЄє]+$" title="Вкажіть місяць кирилицею">
+        </p>
+
+        <p>
+          <label for="image">Посилання на зображення</label>
+          <input id="image" name="image" type="url" maxlength="2048" placeholder="https://">
+        </p>
+
+        <p>
+          <label for="description">Опис догляду</label>
+          <textarea id="description" name="description" required maxlength="300" rows="4" placeholder="Короткий опис догляду за рослиною"></textarea>
+        </p>
+
+        <fieldset>
+          <p>
+            <label>
+              <input id="pet-safe" name="petSafe" type="checkbox">
+              Безпечна для тварин
+            </label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Зберегти</button>
+          <button type="reset">Скасувати</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contacts">
+    <h2>Контактна інформація</h2>
+    <address>
+      <p>Розробник: Чирва Данііл, група ІН-42/1</p>
+      <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
+    </address>
+    <p>&copy; 2026 Кімнатні рослини. Усі права захищено.</p>
+  </footer>
