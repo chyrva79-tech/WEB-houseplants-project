@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про проєкт – Зелений дім</title>
+  <meta name="description" content="Мета каталогу кімнатних рослин, інструкція з використання, відео з догляду та часті запитання.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <a href="#main-content">Перейти до основного вмісту</a>
+
+  <header>
+    <p>
+      <a href="index.html">
+        <img src="images/logo.svg" width="40" height="40" alt="">
+        Зелений дім
+      </a>
+    </p>
+    <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
+
+    <nav aria-label="Основна навігація">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="about.html" aria-current="page">Про проєкт</a></li>
+      </ul>
+    </nav>
+
+    <search>
+      <form action="index.html" method="get">
+        <label for="search">Пошук рослини</label>
+        <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
+        <button type="submit">Знайти</button>
+      </form>
+    </search>
+  </header>
+
+  <main id="main-content">
+    <h1>Про проєкт</h1>
+    <p>Каталог «Зелений дім» створено, щоб зібрати в одному місці коротку й зрозумілу інформацію про популярні кімнатні рослини: скільки їм потрібно світла, як часто їх поливати та чи безпечні вони для домашніх тварин.</p>
+
+    <section aria-labelledby="steps-title">
+      <h2 id="steps-title">Як користуватися каталогом</h2>
+      <ol>
+        <li>Відкрийте головну сторінку каталогу.</li>
+        <li>Оберіть категорію за вимогами до світла або скористайтеся пошуком.</li>
+        <li>Натисніть на назву рослини, щоб перейти на сторінку з детальним описом.</li>
+        <li>Перегляньте таблицю догляду за сезонами та налаштуйте полив під свою рослину.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="features-title">
+      <h2 id="features-title">Можливості в наступних роботах</h2>
+      <ul>
+        <li>Оформлення сторінок за допомогою CSS.</li>
+        <li>Фільтрація та сортування карток за допомогою JavaScript.</li>
+        <li>Завантаження даних про рослини з REST API.</li>
+        <li>Нагадування про полив для обраних рослин.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="video-title">
+      <h2 id="video-title">Відеоінструкція з догляду</h2>
+      <video controls width="640" height="360" preload="metadata" poster="media/care-poster.jpg">
+        <source src="media/care.webm" type="video/webm">
+        <source src="media/care.mp4" type="video/mp4">
+        <track kind="captions" src="media/care.uk.vtt" srclang="uk" label="Українська" default>
+        <p>Ваш браузер не підтримує відтворення відео. <a href="media/care.mp4">Завантажити відеоінструкцію</a>.</p>
+      </video>
+    </section>
+
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">Часті запитання</h2>
+      <details name="faq">
+        <summary>Як зрозуміти, що рослину пора поливати?</summary>
+        <p>Перевірте ґрунт пальцем: якщо верхні 2–3 см сухі, рослину можна поливати. Дані в каталозі є орієнтовними.</p>
+      </details>
+      <details name="faq">
+        <summary>Які рослини безпечні для котів і собак?</summary>
+        <p>У кожній картці є ознака «Безпечна для тварин». Наприклад, хлорофітум, калатея та ехеверія не є отруйними.</p>
+      </details>
+      <details name="faq">
+        <summary>Чи можна додати свою рослину до каталогу?</summary>
+        <p>Так, на головній сторінці є форма «Додати рослину». Поки що вона працює в демонстраційному режимі.</p>
+      </details>
+    </section>
+
+    <section aria-labelledby="author-title">
+      <h2 id="author-title">Автор проєкту</h2>
+      <address>
+        <p>Чирва Данііл, студент групи ІН-42/1, Сумський державний університет</p>
+        <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
+      </address>
+    </section>
+  </main>
+
+  <footer id="contacts">
+    <h2>Контактна інформація</h2>
+    <address>
+      <p>Розробник: Чирва Данііл, група ІН-42/1</p>
+      <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
+    </address>
+    <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
+  </footer>
+</body>
+</html> 
