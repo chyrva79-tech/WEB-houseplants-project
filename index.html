@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кімнатні рослини</title>
+  <title>Каталог кімнатних рослин – Зелений дім</title>
+  <meta name="description" content="Каталог кімнатних рослин: вимоги до світла, частота поливу, висота та безпечність для тварин.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <a href="#catalog">Перейти до каталогу</a>
 
   <header>
     <p>
-      <a href="#catalog">
+      <a href="index.html">
         <img src="images/logo.svg" width="40" height="40" alt="">
         Зелений дім
       </a>
     </p>
+    <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
 
     <nav aria-label="Основна навігація">
       <ul>
-        <li><a href="#catalog">Каталог</a></li>
-        <li><a href="#item">Рослина</a></li>
-        <li><a href="#add">Додати рослину</a></li>
+        <li><a href="index.html" aria-current="page">Каталог</a></li>
+        <li><a href="about.html">Про проєкт</a></li>
       </ul>
     </nav>
 
     <search>
-      <form action="#catalog" method="get">
+      <form action="index.html" method="get">
         <label for="search">Пошук рослини</label>
         <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
         <button type="submit">Знайти</button>
@@ -46,7 +48,7 @@
         </ul>
       </nav>
 
-      <form action="#catalog" method="get">
+      <form class="sort-form" action="#catalog" method="get">
         <label for="sort">Сортувати</label>
         <select id="sort" name="sort">
           <option value="name" selected>за назвою</option>
@@ -56,16 +58,18 @@
         <button type="submit">Застосувати</button>
       </form>
 
-      <ul>
+      <ul class="catalog-list">
         <li>
-          <article id="item">
-            <h2><a href="#item">Монстера</a></h2>
+          <article class="plant-card">
+            <h2><a href="details.html">Монстера</a></h2>
             <p>
               <img src="images/monstera-320w.jpg"
                    srcset="images/monstera-320w.jpg 320w, images/monstera-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
-                   alt="Монстера з великим розрізаним листям">
+                   title="Монстера"
+                   alt="Монстера з великим розрізаним листям"
+                   fetchpriority="high">
             </p>
             <p>Світло: розсіяне</p>
             <p>Полив: раз на <data value="7">7 днів</data></p>
@@ -76,13 +80,14 @@
           </article>
         </li>
         <li>
-          <article>
-            <h2><a href="#item">Сансев'єрія</a></h2>
+          <article class="plant-card">
+            <h2><a href="details.html">Сансев'єрія</a></h2>
             <p>
               <img src="images/sansevieria-320w.jpg"
                    srcset="images/sansevieria-320w.jpg 320w, images/sansevieria-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
+                   title="Сансев'єрія"
                    alt="Сансев'єрія з прямим смугастим листям"
                    loading="lazy">
             </p>
@@ -95,13 +100,14 @@
           </article>
         </li>
         <li>
-          <article>
-            <h2><a href="#item">Хлорофітум</a></h2>
+          <article class="plant-card">
+            <h2><a href="details.html">Хлорофітум</a></h2>
             <p>
               <img src="images/chlorophytum-320w.jpg"
                    srcset="images/chlorophytum-320w.jpg 320w, images/chlorophytum-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
+                   title="Хлорофітум"
                    alt="Хлорофітум з довгим смугастим листям"
                    loading="lazy">
             </p>
@@ -114,13 +120,14 @@
           </article>
         </li>
         <li>
-          <article>
-            <h2><a href="#item">Калатея</a></h2>
+          <article class="plant-card">
+            <h2><a href="details.html">Калатея</a></h2>
             <p>
               <img src="images/calathea-320w.jpg"
                    srcset="images/calathea-320w.jpg 320w, images/calathea-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
+                   title="Калатея"
                    alt="Калатея з візерунчастим листям"
                    loading="lazy">
             </p>
@@ -133,13 +140,14 @@
           </article>
         </li>
         <li>
-          <article>
-            <h2><a href="#item">Фікус Бенджаміна</a></h2>
+          <article class="plant-card">
+            <h2><a href="details.html">Фікус Бенджаміна</a></h2>
             <p>
               <img src="images/ficus-320w.jpg"
                    srcset="images/ficus-320w.jpg 320w, images/ficus-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
+                   title="Фікус Бенджаміна"
                    alt="Фікус Бенджаміна з дрібним глянцевим листям"
                    loading="lazy">
             </p>
@@ -152,13 +160,14 @@
           </article>
         </li>
         <li>
-          <article>
-            <h2><a href="#item">Ехеверія</a></h2>
+          <article class="plant-card">
+            <h2><a href="details.html">Ехеверія</a></h2>
             <p>
               <img src="images/echeveria-320w.jpg"
                    srcset="images/echeveria-320w.jpg 320w, images/echeveria-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
+                   title="Ехеверія"
                    alt="Ехеверія — сукулент із щільною розеткою листя"
                    loading="lazy">
             </p>
@@ -173,7 +182,7 @@
       </ul>
     </section>
 
-    <section id="add" aria-labelledby="add-title">
+    <section id="add" class="add-plant" aria-labelledby="add-title">
       <h2 id="add-title">Додати рослину</h2>
       <form action="#add" method="post">
         <p>
@@ -211,7 +220,30 @@
         </p>
       </form>
     </section>
+
+    <article id="about" class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Про мене</h2>
+      <p>
+        <img src="images/avatar.jpg" width="220" height="300"
+             alt="Фото автора — Чирва Данііл"
+             title="Чирва Данііл"
+             loading="lazy">
+      </p>
+      <h3>Навчання</h3>
+      <p>Я студент групи ІН-42/1 Сумського державного університету. Вивчаю веброзробку: HTML, CSS та JavaScript.</p>
+      <h3>Інтереси</h3>
+      <p>Мені подобається створювати інтерактивні вебдодатки, а цей каталог буду розвивати протягом семестру.</p>
+    </article>
   </main>
+
+  <aside class="facts" aria-labelledby="facts-title">
+    <h2 id="facts-title">Цікаві факти</h2>
+    <ul>
+      <li>Калатея ввечері піднімає листя вгору, тому її називають «молитовною рослиною».</li>
+      <li>Сукуленти запасають воду в листі й можуть тижнями обходитися без поливу.</li>
+      <li>Хлорофітум вважається однією з найкращих рослин для очищення повітря.</li>
+    </ul>
+  </aside>
 
   <footer id="contacts">
     <h2>Контактна інформація</h2>
@@ -220,5 +252,7 @@
       <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
     </address>
-    <p>&copy; 2026 Кімнатні рослини. Усі права захищено.</p>
+    <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
   </footer>
+</body>
+</html>
