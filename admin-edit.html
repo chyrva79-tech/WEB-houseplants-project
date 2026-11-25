@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редагування: Калатея – Зелений дім</title>
+  <meta name="description" content="Навчальна форма редагування рослини каталогу: калатея.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <a href="#main-content">Перейти до основного вмісту</a>
+
+  <header>
+    <p>
+      <a href="index.html">
+        <img src="images/logo.svg" width="40" height="40" alt="">
+        Зелений дім
+      </a>
+    </p>
+    <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
+
+    <nav aria-label="Основна навігація">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="about.html">Про проєкт</a></li>
+      </ul>
+    </nav>
+
+    <search>
+      <form action="index.html" method="get">
+        <label for="search">Пошук рослини</label>
+        <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
+        <button type="submit">Знайти</button>
+      </form>
+    </search>
+  </header>
+
+  <main id="main-content">
+    <nav aria-label="Хлібні крихти">
+      <ol>
+        <li><a href="admin.html">Адміністрування</a></li>
+        <li><a href="admin-edit.html" aria-current="page">Редагування: Калатея</a></li>
+      </ol>
+    </nav>
+
+    <h1>Редагування рослини</h1>
+    <p>Форма заповнена поточними даними калатеї. Кнопка «Скасувати зміни» повертає саме ці значення.</p>
+
+    <form id="edit-form" action="admin-edit.html" method="get" autocomplete="off">
+      <input type="hidden" name="id" value="4">
+      <fieldset>
+        <legend>Основні дані</legend>
+
+        <p>
+          <label for="edit-form-title">Назва рослини</label>
+          <input id="edit-form-title" name="title" type="text" required minlength="2" maxlength="60" value="Калатея"
+                 aria-describedby="edit-form-title-hint">
+        </p>
+        <p id="edit-form-title-hint">Від 2 до 60 символів, наприклад «Монстера».</p>
+
+        <p>
+          <label for="edit-form-code">Код рослини</label>
+          <input id="edit-form-code" name="plantCode" type="text" required pattern="[A-Z]{3}-[0-9]{3}" maxlength="7" value="CAL-004"
+                 aria-describedby="edit-form-code-hint">
+        </p>
+        <p id="edit-form-code-hint">Три великі латинські літери, дефіс і три цифри, наприклад MON-001.</p>
+
+        <p>
+          <label for="edit-form-light">Вимоги до світла</label>
+          <select id="edit-form-light" name="light" required>
+            <option value="">Оберіть варіант</option>
+            <option value="bright">Яскраве світло</option>
+            <option value="diffused">Розсіяне світло</option>
+            <option value="shade" selected>Півтінь</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="edit-form-water">Частота поливу, днів</label>
+          <input id="edit-form-water" name="waterDays" type="number" required min="1" max="60" step="1" value="4"
+                 aria-describedby="edit-form-water-hint">
+        </p>
+        <p id="edit-form-water-hint">Ціле число від 1 до 60: раз на скільки днів поливати рослину.</p>
+
+        <p>
+          <label for="edit-form-height">Максимальна висота, см</label>
+          <input id="edit-form-height" name="maxHeight" type="number" min="5" max="1000" step="5" value="80"
+                 aria-describedby="edit-form-height-hint">
+        </p>
+        <p id="edit-form-height-hint">Необов’язково. Від 5 до 1000 см із кроком 5 см.</p>
+
+        <p>
+          <label for="edit-form-added">Дата додавання до каталогу</label>
+          <input id="edit-form-added" name="addedAt" type="date" required min="2026-01-01" max="2026-12-31" value="2026-11-15">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Зображення, опис і безпечність</legend>
+
+        <p>
+          <label for="edit-form-image">Посилання на фото</label>
+          <input id="edit-form-image" name="image" type="url" maxlength="2048" value="https://chyrva79-tech.github.io/WEB-houseplants-project/images/calathea-800w.jpg"
+                 aria-describedby="edit-form-image-hint">
+        </p>
+        <p id="edit-form-image-hint">Необов’язково. Повна адреса, що починається з https://.</p>
+
+        <p>
+          <label for="edit-form-description">Опис догляду</label>
+          <textarea id="edit-form-description" name="description" required minlength="10" maxlength="500" rows="4" cols="50"
+                    aria-describedby="edit-form-description-hint">Рослина з яскравим візерунком на листі, яке ввечері піднімається вгору. Потребує півтіні, м’якої води та високої вологості повітря.</textarea>
+        </p>
+        <p id="edit-form-description-hint">Від 10 до 500 символів.</p>
+
+        <p>
+          <input id="edit-form-pet-safe" name="petSafe" type="checkbox" value="true" checked>
+          <label for="edit-form-pet-safe">Безпечна для котів і собак</label>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Зберегти зміни</button>
+        <button type="reset">Скасувати зміни</button>
+      </p>
+    </form>
+
+    <p><a href="admin.html">Повернутися до адміністрування</a></p>
+  </main>
+
+  <footer id="contacts">
+    <h2>Контактна інформація</h2>
+    <address>
+      <p>Розробник: Чирва Данііл, група ІН-42/1</p>
+      <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
+    </address>
+    <p><a href="admin.html">Адміністрування</a></p>
+    <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
+  </footer>
+</body>
+</html>
