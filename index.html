@@ -9,7 +9,7 @@
 </head>
 <body>
   <a href="#catalog">Перейти до каталогу</a>
-
+ 
   <header>
     <p>
       <a href="index.html">
@@ -18,14 +18,14 @@
       </a>
     </p>
     <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
-
+ 
     <nav aria-label="Основна навігація">
       <ul>
         <li><a href="index.html" aria-current="page">Каталог</a></li>
         <li><a href="about.html">Про проєкт</a></li>
       </ul>
     </nav>
-
+ 
     <search>
       <form action="index.html" method="get">
         <label for="search">Пошук рослини</label>
@@ -34,11 +34,11 @@
       </form>
     </search>
   </header>
-
+ 
   <main>
     <section id="catalog" aria-labelledby="catalog-title">
       <h1 id="catalog-title">Кімнатні рослини</h1>
-
+ 
       <nav aria-label="Категорії каталогу">
         <ul>
           <li><a href="#catalog" aria-current="page">Усі рослини</a></li>
@@ -47,7 +47,7 @@
           <li><a href="#catalog">Півтінь</a></li>
         </ul>
       </nav>
-
+ 
       <form class="sort-form" action="#catalog" method="get">
         <label for="sort">Сортувати</label>
         <select id="sort" name="sort">
@@ -57,7 +57,7 @@
         </select>
         <button type="submit">Застосувати</button>
       </form>
-
+ 
       <ul class="catalog-list">
         <li>
           <article class="plant-card">
@@ -181,46 +181,7 @@
         </li>
       </ul>
     </section>
-
-    <section id="add" class="add-plant" aria-labelledby="add-title">
-      <h2 id="add-title">Додати рослину</h2>
-      <form action="#add" method="post">
-        <p>
-          <label for="water">Полив, раз на скільки днів</label>
-          <input id="water" name="water" type="number" required min="1" max="60" step="1" placeholder="7">
-        </p>
-
-        <p>
-          <label for="repot">Місяць пересадки</label>
-          <input id="repot" name="repot" type="text" required maxlength="20" placeholder="Квітень" pattern="^[А-Яа-яІіЇїЄє]+$" title="Вкажіть місяць кирилицею">
-        </p>
-
-        <p>
-          <label for="image">Посилання на зображення</label>
-          <input id="image" name="image" type="url" maxlength="2048" placeholder="https://">
-        </p>
-
-        <p>
-          <label for="description">Опис догляду</label>
-          <textarea id="description" name="description" required maxlength="300" rows="4" placeholder="Короткий опис догляду за рослиною"></textarea>
-        </p>
-
-        <fieldset>
-          <p>
-            <label>
-              <input id="pet-safe" name="petSafe" type="checkbox">
-              Безпечна для тварин
-            </label>
-          </p>
-        </fieldset>
-
-        <p>
-          <button type="submit">Зберегти</button>
-          <button type="reset">Скасувати</button>
-        </p>
-      </form>
-    </section>
-
+ 
     <article id="about" class="about" aria-labelledby="about-title">
       <h2 id="about-title">Про мене</h2>
       <p>
@@ -235,7 +196,7 @@
       <p>Мені подобається створювати інтерактивні вебдодатки, а цей каталог буду розвивати протягом семестру.</p>
     </article>
   </main>
-
+ 
   <aside class="facts" aria-labelledby="facts-title">
     <h2 id="facts-title">Цікаві факти</h2>
     <ul>
@@ -244,7 +205,7 @@
       <li>Хлорофітум вважається однією з найкращих рослин для очищення повітря.</li>
     </ul>
   </aside>
-
+ 
   <footer id="contacts">
     <h2>Контактна інформація</h2>
     <address>
@@ -252,7 +213,9 @@
       <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
     </address>
+    <p><a href="admin.html">Адміністрування</a></p>
     <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
   </footer>
 </body>
 </html>
+ 

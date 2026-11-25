@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адміністрування – Зелений дім</title>
+  <meta name="description" content="Навчальна сторінка адміністрування каталогу кімнатних рослин: список рослин і форма додавання.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <a href="#main-content">Перейти до основного вмісту</a>
+
+  <header>
+    <p>
+      <a href="index.html">
+        <img src="images/logo.svg" width="40" height="40" alt="">
+        Зелений дім
+      </a>
+    </p>
+    <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
+
+    <nav aria-label="Основна навігація">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="about.html">Про проєкт</a></li>
+      </ul>
+    </nav>
+
+    <search>
+      <form action="index.html" method="get">
+        <label for="search">Пошук рослини</label>
+        <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
+        <button type="submit">Знайти</button>
+      </form>
+    </search>
+  </header>
+
+  <main id="main-content">
+    <h1>Адміністрування каталогу</h1>
+    <p>Ця сторінка – навчальна імітація адміністративного інтерфейсу. Вона не захищена й нічого не зберігає: справжнє збереження даних і перевірка прав доступу потребують серверної частини.</p>
+
+    <section id="plants" aria-labelledby="plants-title">
+      <h2 id="plants-title">Рослини в каталозі</h2>
+      <table>
+        <caption>Список рослин каталогу «Зелений дім»</caption>
+        <thead>
+          <tr>
+            <th scope="col">Назва</th>
+            <th scope="col">Вимоги до світла</th>
+            <th scope="col">Полив, раз на днів</th>
+            <th scope="col">Безпечна для тварин</th>
+            <th scope="col">Дії</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Монстера</th>
+            <td>розсіяне світло</td>
+            <td><data value="7">7</data></td>
+            <td>ні</td>
+            <td><a href="admin-edit.html">Редагувати: Монстера</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Сансев'єрія</th>
+            <td>півтінь</td>
+            <td><data value="14">14</data></td>
+            <td>ні</td>
+            <td><a href="admin-edit.html">Редагувати: Сансев'єрія</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Хлорофітум</th>
+            <td>розсіяне світло</td>
+            <td><data value="5">5</data></td>
+            <td>так</td>
+            <td><a href="admin-edit.html">Редагувати: Хлорофітум</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Калатея</th>
+            <td>півтінь</td>
+            <td><data value="4">4</data></td>
+            <td>так</td>
+            <td><a href="admin-edit.html">Редагувати: Калатея</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Фікус Бенджаміна</th>
+            <td>яскраве світло</td>
+            <td><data value="7">7</data></td>
+            <td>ні</td>
+            <td><a href="admin-edit.html">Редагувати: Фікус Бенджаміна</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Ехеверія</th>
+            <td>яскраве світло</td>
+            <td><data value="14">14</data></td>
+            <td>так</td>
+            <td><a href="admin-edit.html">Редагувати: Ехеверія</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="add" aria-labelledby="add-title">
+      <h2 id="add-title">Додати рослину</h2>
+      <form id="plant-form" action="admin.html" method="get" autocomplete="off">
+        <fieldset>
+          <legend>Основні дані</legend>
+
+          <p>
+            <label for="plant-form-title">Назва рослини</label>
+            <input id="plant-form-title" name="title" type="text" required minlength="2" maxlength="60"
+                   aria-describedby="plant-form-title-hint">
+          </p>
+          <p id="plant-form-title-hint">Від 2 до 60 символів, наприклад «Монстера».</p>
+
+          <p>
+            <label for="plant-form-code">Код рослини</label>
+            <input id="plant-form-code" name="plantCode" type="text" required pattern="[A-Z]{3}-[0-9]{3}" maxlength="7"
+                   aria-describedby="plant-form-code-hint">
+          </p>
+          <p id="plant-form-code-hint">Три великі латинські літери, дефіс і три цифри, наприклад MON-001.</p>
+
+          <p>
+            <label for="plant-form-light">Вимоги до світла</label>
+            <select id="plant-form-light" name="light" required>
+              <option value="" selected>Оберіть варіант</option>
+              <option value="bright">Яскраве світло</option>
+              <option value="diffused">Розсіяне світло</option>
+              <option value="shade">Півтінь</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="plant-form-water">Частота поливу, днів</label>
+            <input id="plant-form-water" name="waterDays" type="number" required min="1" max="60" step="1"
+                   aria-describedby="plant-form-water-hint">
+          </p>
+          <p id="plant-form-water-hint">Ціле число від 1 до 60: раз на скільки днів поливати рослину.</p>
+
+          <p>
+            <label for="plant-form-height">Максимальна висота, см</label>
+            <input id="plant-form-height" name="maxHeight" type="number" min="5" max="1000" step="5"
+                   aria-describedby="plant-form-height-hint">
+          </p>
+          <p id="plant-form-height-hint">Необов’язково. Від 5 до 1000 см із кроком 5 см.</p>
+
+          <p>
+            <label for="plant-form-added">Дата додавання до каталогу</label>
+            <input id="plant-form-added" name="addedAt" type="date" required min="2026-01-01" max="2026-12-31">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Зображення, опис і безпечність</legend>
+
+          <p>
+            <label for="plant-form-image">Посилання на фото</label>
+            <input id="plant-form-image" name="image" type="url" maxlength="2048"
+                   aria-describedby="plant-form-image-hint">
+          </p>
+          <p id="plant-form-image-hint">Необов’язково. Повна адреса, що починається з https://.</p>
+
+          <p>
+            <label for="plant-form-description">Опис догляду</label>
+            <textarea id="plant-form-description" name="description" required minlength="10" maxlength="500" rows="4" cols="50"
+                      aria-describedby="plant-form-description-hint"></textarea>
+          </p>
+          <p id="plant-form-description-hint">Від 10 до 500 символів.</p>
+
+          <p>
+            <input id="plant-form-pet-safe" name="petSafe" type="checkbox" value="true">
+            <label for="plant-form-pet-safe">Безпечна для котів і собак</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Додати</button>
+          <button type="reset">Очистити</button>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer id="contacts">
+    <h2>Контактна інформація</h2>
+    <address>
+      <p>Розробник: Чирва Данііл, група ІН-42/1</p>
+      <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
+    </address>
+    <p><a href="admin.html" aria-current="page">Адміністрування</a></p>
+    <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
+  </footer>
+</body>
+</html>
