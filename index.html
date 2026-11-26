@@ -6,64 +6,65 @@
   <title>Каталог кімнатних рослин – Зелений дім</title>
   <meta name="description" content="Каталог кімнатних рослин: вимоги до світла, частота поливу, висота та безпечність для тварин.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <a href="#catalog">Перейти до каталогу</a>
+  <a class="skip-link" href="#catalog">Перейти до каталогу</a>
  
-  <header>
-    <p>
-      <a href="index.html">
-        <img src="images/logo.svg" width="40" height="40" alt="">
+  <header class="site-header">
+    <p class="brand">
+      <a class="brand__link" href="index.html">
+        <img class="brand__logo" src="images/logo.svg" width="40" height="40" alt="">
         Зелений дім
       </a>
     </p>
-    <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
+    <p class="site-header__owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
  
-    <nav aria-label="Основна навігація">
-      <ul>
-        <li><a href="index.html" aria-current="page">Каталог</a></li>
-        <li><a href="about.html">Про проєкт</a></li>
+    <nav class="site-nav" aria-label="Основна навігація">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html" aria-current="page">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="about.html">Про проєкт</a></li>
       </ul>
     </nav>
  
-    <search>
-      <form action="index.html" method="get">
-        <label for="search">Пошук рослини</label>
-        <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
-        <button type="submit">Знайти</button>
+    <search class="search">
+      <form class="search__form" action="index.html" method="get">
+        <label class="search__label" for="search">Пошук рослини</label>
+        <input class="search__input" id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
+        <button class="button button--primary" type="submit">Знайти</button>
       </form>
     </search>
   </header>
  
-  <main>
-    <section id="catalog" aria-labelledby="catalog-title">
-      <h1 id="catalog-title">Кімнатні рослини</h1>
+  <main class="page">
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+      <h1 class="catalog__title" id="catalog-title">Кімнатні рослини</h1>
  
-      <nav aria-label="Категорії каталогу">
-        <ul>
-          <li><a href="#catalog" aria-current="page">Усі рослини</a></li>
-          <li><a href="#catalog">Яскраве світло</a></li>
-          <li><a href="#catalog">Розсіяне світло</a></li>
-          <li><a href="#catalog">Півтінь</a></li>
+      <nav class="category-nav" aria-label="Категорії каталогу">
+        <ul class="category-nav__list">
+          <li class="category-nav__item"><a class="category-nav__link" href="#catalog" aria-current="page">Усі рослини</a></li>
+          <li class="category-nav__item"><a class="category-nav__link" href="#catalog">Яскраве світло</a></li>
+          <li class="category-nav__item"><a class="category-nav__link" href="#catalog">Розсіяне світло</a></li>
+          <li class="category-nav__item"><a class="category-nav__link" href="#catalog">Півтінь</a></li>
         </ul>
       </nav>
  
       <form class="sort-form" action="#catalog" method="get">
-        <label for="sort">Сортувати</label>
-        <select id="sort" name="sort">
+        <label class="sort-form__label" for="sort">Сортувати</label>
+        <select class="sort-form__select" id="sort" name="sort">
           <option value="name" selected>за назвою</option>
           <option value="water-asc">за поливом: спочатку частіше</option>
           <option value="water-desc">за поливом: спочатку рідше</option>
         </select>
-        <button type="submit">Застосувати</button>
+        <button class="button button--secondary" type="submit">Застосувати</button>
       </form>
  
       <ul class="catalog-list">
-        <li>
+        <li class="catalog-list__item">
           <article class="plant-card">
-            <h2><a href="details.html">Монстера</a></h2>
-            <p>
-              <img src="images/monstera-320w.jpg"
+            <h2 class="plant-card__title"><a class="plant-card__link" href="details.html">Монстера</a></h2>
+            <p class="plant-card__media">
+              <img class="plant-card__image" src="images/monstera-320w.jpg"
                    srcset="images/monstera-320w.jpg 320w, images/monstera-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
@@ -71,19 +72,19 @@
                    alt="Монстера з великим розрізаним листям"
                    fetchpriority="high">
             </p>
-            <p>Світло: розсіяне</p>
-            <p>Полив: раз на <data value="7">7 днів</data></p>
-            <p>Максимальна висота: до 300 см</p>
-            <p>Пересадка: <time datetime="2027-04">квітень</time></p>
-            <p>Безпечна для тварин: ні</p>
-            <p>Велика ліана з декоративним листям. Любить вологе повітря та потребує опори для росту.</p>
+            <p class="plant-card__badge" data-light="diffused">Світло: розсіяне</p>
+            <p class="plant-card__water">Полив: раз на <data class="plant-card__number" value="7">7 днів</data></p>
+            <p class="plant-card__meta">Максимальна висота: до 300 см</p>
+            <p class="plant-card__meta">Пересадка: <time datetime="2027-04">квітень</time></p>
+            <p class="plant-card__pet" data-pet-safe="false">Безпечна для тварин: ні</p>
+            <p class="plant-card__text">Велика ліана з декоративним листям. Любить вологе повітря та потребує опори для росту.</p>
           </article>
         </li>
-        <li>
+        <li class="catalog-list__item">
           <article class="plant-card">
-            <h2><a href="details.html">Сансев'єрія</a></h2>
-            <p>
-              <img src="images/sansevieria-320w.jpg"
+            <h2 class="plant-card__title"><a class="plant-card__link" href="details.html">Сансев'єрія</a></h2>
+            <p class="plant-card__media">
+              <img class="plant-card__image" src="images/sansevieria-320w.jpg"
                    srcset="images/sansevieria-320w.jpg 320w, images/sansevieria-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
@@ -91,19 +92,19 @@
                    alt="Сансев'єрія з прямим смугастим листям"
                    loading="lazy">
             </p>
-            <p>Світло: півтінь</p>
-            <p>Полив: раз на <data value="14">14 днів</data></p>
-            <p>Максимальна висота: до 120 см</p>
-            <p>Пересадка: <time datetime="2027-03">березень</time></p>
-            <p>Безпечна для тварин: ні</p>
-            <p>Дуже витривала рослина для початківців. Переносить посуху та нестачу світла.</p>
+            <p class="plant-card__badge" data-light="shade">Світло: півтінь</p>
+            <p class="plant-card__water">Полив: раз на <data class="plant-card__number" value="14">14 днів</data></p>
+            <p class="plant-card__meta">Максимальна висота: до 120 см</p>
+            <p class="plant-card__meta">Пересадка: <time datetime="2027-03">березень</time></p>
+            <p class="plant-card__pet" data-pet-safe="false">Безпечна для тварин: ні</p>
+            <p class="plant-card__text">Дуже витривала рослина для початківців. Переносить посуху та нестачу світла.</p>
           </article>
         </li>
-        <li>
+        <li class="catalog-list__item">
           <article class="plant-card">
-            <h2><a href="details.html">Хлорофітум</a></h2>
-            <p>
-              <img src="images/chlorophytum-320w.jpg"
+            <h2 class="plant-card__title"><a class="plant-card__link" href="details.html">Хлорофітум</a></h2>
+            <p class="plant-card__media">
+              <img class="plant-card__image" src="images/chlorophytum-320w.jpg"
                    srcset="images/chlorophytum-320w.jpg 320w, images/chlorophytum-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
@@ -111,19 +112,19 @@
                    alt="Хлорофітум з довгим смугастим листям"
                    loading="lazy">
             </p>
-            <p>Світло: розсіяне</p>
-            <p>Полив: раз на <data value="5">5 днів</data></p>
-            <p>Максимальна висота: до 60 см</p>
-            <p>Пересадка: <time datetime="2027-04">квітень</time></p>
-            <p>Безпечна для тварин: так</p>
-            <p>Невибаглива рослина, яка добре очищає повітря і легко розмножується.</p>
+            <p class="plant-card__badge" data-light="diffused">Світло: розсіяне</p>
+            <p class="plant-card__water">Полив: раз на <data class="plant-card__number" value="5">5 днів</data></p>
+            <p class="plant-card__meta">Максимальна висота: до 60 см</p>
+            <p class="plant-card__meta">Пересадка: <time datetime="2027-04">квітень</time></p>
+            <p class="plant-card__pet" data-pet-safe="true">Безпечна для тварин: так</p>
+            <p class="plant-card__text">Невибаглива рослина, яка добре очищає повітря і легко розмножується.</p>
           </article>
         </li>
-        <li>
+        <li class="catalog-list__item">
           <article class="plant-card">
-            <h2><a href="details.html">Калатея</a></h2>
-            <p>
-              <img src="images/calathea-320w.jpg"
+            <h2 class="plant-card__title"><a class="plant-card__link" href="details.html">Калатея</a></h2>
+            <p class="plant-card__media">
+              <img class="plant-card__image" src="images/calathea-320w.jpg"
                    srcset="images/calathea-320w.jpg 320w, images/calathea-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
@@ -131,19 +132,19 @@
                    alt="Калатея з візерунчастим листям"
                    loading="lazy">
             </p>
-            <p>Світло: півтінь</p>
-            <p>Полив: раз на <data value="4">4 дні</data></p>
-            <p>Максимальна висота: до 80 см</p>
-            <p>Пересадка: <time datetime="2027-05">травень</time></p>
-            <p>Безпечна для тварин: так</p>
-            <p>Рослина з яскравим візерунком на листі. Потребує м'якої води та високої вологості.</p>
+            <p class="plant-card__badge" data-light="shade">Світло: півтінь</p>
+            <p class="plant-card__water">Полив: раз на <data class="plant-card__number" value="4">4 дні</data></p>
+            <p class="plant-card__meta">Максимальна висота: до 80 см</p>
+            <p class="plant-card__meta">Пересадка: <time datetime="2027-05">травень</time></p>
+            <p class="plant-card__pet" data-pet-safe="true">Безпечна для тварин: так</p>
+            <p class="plant-card__text">Рослина з яскравим візерунком на листі. Потребує м'якої води та високої вологості.</p>
           </article>
         </li>
-        <li>
+        <li class="catalog-list__item">
           <article class="plant-card">
-            <h2><a href="details.html">Фікус Бенджаміна</a></h2>
-            <p>
-              <img src="images/ficus-320w.jpg"
+            <h2 class="plant-card__title"><a class="plant-card__link" href="details.html">Фікус Бенджаміна</a></h2>
+            <p class="plant-card__media">
+              <img class="plant-card__image" src="images/ficus-320w.jpg"
                    srcset="images/ficus-320w.jpg 320w, images/ficus-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
@@ -151,19 +152,19 @@
                    alt="Фікус Бенджаміна з дрібним глянцевим листям"
                    loading="lazy">
             </p>
-            <p>Світло: яскраве</p>
-            <p>Полив: раз на <data value="7">7 днів</data></p>
-            <p>Максимальна висота: до 300 см</p>
-            <p>Пересадка: <time datetime="2027-03">березень</time></p>
-            <p>Безпечна для тварин: ні</p>
-            <p>Деревце з густою кроною. Не любить переставлянь і протягів.</p>
+            <p class="plant-card__badge" data-light="bright">Світло: яскраве</p>
+            <p class="plant-card__water">Полив: раз на <data class="plant-card__number" value="7">7 днів</data></p>
+            <p class="plant-card__meta">Максимальна висота: до 300 см</p>
+            <p class="plant-card__meta">Пересадка: <time datetime="2027-03">березень</time></p>
+            <p class="plant-card__pet" data-pet-safe="false">Безпечна для тварин: ні</p>
+            <p class="plant-card__text">Деревце з густою кроною. Не любить переставлянь і протягів.</p>
           </article>
         </li>
-        <li>
+        <li class="catalog-list__item">
           <article class="plant-card">
-            <h2><a href="details.html">Ехеверія</a></h2>
-            <p>
-              <img src="images/echeveria-320w.jpg"
+            <h2 class="plant-card__title"><a class="plant-card__link" href="details.html">Ехеверія</a></h2>
+            <p class="plant-card__media">
+              <img class="plant-card__image" src="images/echeveria-320w.jpg"
                    srcset="images/echeveria-320w.jpg 320w, images/echeveria-800w.jpg 800w"
                    sizes="(max-width: 600px) 320px, 800px"
                    width="320" height="240"
@@ -171,50 +172,50 @@
                    alt="Ехеверія — сукулент із щільною розеткою листя"
                    loading="lazy">
             </p>
-            <p>Світло: яскраве</p>
-            <p>Полив: раз на <data value="14">14 днів</data></p>
-            <p>Максимальна висота: до 25 см</p>
-            <p>Пересадка: <time datetime="2027-04">квітень</time></p>
-            <p>Безпечна для тварин: так</p>
-            <p>Компактний сукулент для сонячного підвіконня. Поливати лише після просихання ґрунту.</p>
+            <p class="plant-card__badge" data-light="bright">Світло: яскраве</p>
+            <p class="plant-card__water">Полив: раз на <data class="plant-card__number" value="14">14 днів</data></p>
+            <p class="plant-card__meta">Максимальна висота: до 25 см</p>
+            <p class="plant-card__meta">Пересадка: <time datetime="2027-04">квітень</time></p>
+            <p class="plant-card__pet" data-pet-safe="true">Безпечна для тварин: так</p>
+            <p class="plant-card__text">Компактний сукулент для сонячного підвіконня. Поливати лише після просихання ґрунту.</p>
           </article>
         </li>
       </ul>
     </section>
  
     <article id="about" class="about" aria-labelledby="about-title">
-      <h2 id="about-title">Про мене</h2>
-      <p>
-        <img src="images/avatar.jpg" width="220" height="300"
+      <h2 class="about__title" id="about-title">Про мене</h2>
+      <p class="about__media">
+        <img class="about__photo" src="images/avatar.jpg" width="220" height="300"
              alt="Фото автора — Чирва Данііл"
              title="Чирва Данііл"
              loading="lazy">
       </p>
-      <h3>Навчання</h3>
+      <h3 class="about__subtitle">Навчання</h3>
       <p>Я студент групи ІН-42/1 Сумського державного університету. Вивчаю веброзробку: HTML, CSS та JavaScript.</p>
-      <h3>Інтереси</h3>
+      <h3 class="about__subtitle">Інтереси</h3>
       <p>Мені подобається створювати інтерактивні вебдодатки, а цей каталог буду розвивати протягом семестру.</p>
     </article>
   </main>
  
   <aside class="facts" aria-labelledby="facts-title">
-    <h2 id="facts-title">Цікаві факти</h2>
-    <ul>
+    <h2 class="facts__title" id="facts-title">Цікаві факти</h2>
+    <ul class="facts__list">
       <li>Калатея ввечері піднімає листя вгору, тому її називають «молитовною рослиною».</li>
       <li>Сукуленти запасають воду в листі й можуть тижнями обходитися без поливу.</li>
       <li>Хлорофітум вважається однією з найкращих рослин для очищення повітря.</li>
     </ul>
   </aside>
  
-  <footer id="contacts">
-    <h2>Контактна інформація</h2>
-    <address>
+  <footer class="site-footer" id="contacts">
+    <h2 class="site-footer__title">Контактна інформація</h2>
+    <address class="site-footer__address">
       <p>Розробник: Чирва Данііл, група ІН-42/1</p>
       <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
     </address>
-    <p><a href="admin.html">Адміністрування</a></p>
-    <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
+    <p class="site-footer__admin"><a href="admin.html">Адміністрування</a></p>
+    <p class="site-footer__copy">&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
   </footer>
 </body>
 </html>

@@ -6,49 +6,50 @@
   <title>Монстера делікатесна – Зелений дім</title>
   <meta name="description" content="Монстера делікатесна: опис, вимоги до світла, частота поливу та догляд за сезонами.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-  <a href="#main-content">Перейти до основного вмісту</a>
+  <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
  
-  <header>
-    <p>
-      <a href="index.html">
-        <img src="images/logo.svg" width="40" height="40" alt="">
+  <header class="site-header">
+    <p class="brand">
+      <a class="brand__link" href="index.html">
+        <img class="brand__logo" src="images/logo.svg" width="40" height="40" alt="">
         Зелений дім
       </a>
     </p>
-    <p class="owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
+    <p class="site-header__owner">Чирва Данііл, група ІН-42/1. Мій каталог кімнатних рослин з порадами щодо догляду.</p>
  
-    <nav aria-label="Основна навігація">
-      <ul>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="about.html">Про проєкт</a></li>
+    <nav class="site-nav" aria-label="Основна навігація">
+      <ul class="site-nav__list">
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="about.html">Про проєкт</a></li>
       </ul>
     </nav>
  
-    <search>
-      <form action="index.html" method="get">
-        <label for="search">Пошук рослини</label>
-        <input id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
-        <button type="submit">Знайти</button>
+    <search class="search">
+      <form class="search__form" action="index.html" method="get">
+        <label class="search__label" for="search">Пошук рослини</label>
+        <input class="search__input" id="search" name="q" type="search" placeholder="Назва рослини..." maxlength="80">
+        <button class="button button--primary" type="submit">Знайти</button>
       </form>
     </search>
   </header>
  
-  <main id="main-content">
-    <nav aria-label="Хлібні крихти">
-      <ol>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="details.html" aria-current="page">Монстера</a></li>
+  <main class="page page--text" id="main-content">
+    <nav class="breadcrumbs" aria-label="Хлібні крихти">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Каталог</a></li>
+        <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="details.html" aria-current="page">Монстера</a></li>
       </ol>
     </nav>
  
     <article class="plant-details">
-      <h1>Монстера делікатесна</h1>
+      <h1 class="plant-details__title">Монстера делікатесна</h1>
  
-      <nav aria-label="На цій сторінці">
-        <p>На цій сторінці:</p>
-        <ul>
+      <nav class="toc" aria-label="На цій сторінці">
+        <p class="toc__title">На цій сторінці:</p>
+        <ul class="toc__list">
           <li><a href="#description">Опис</a></li>
           <li><a href="#characteristics">Характеристики</a></li>
           <li><a href="#seasons">Догляд за сезонами</a></li>
@@ -59,16 +60,16 @@
       <section id="description" aria-labelledby="description-title">
         <h2 id="description-title">Опис</h2>
  
-        <figure>
+        <figure class="photo">
           <picture>
             <source type="image/avif" srcset="images/monstera-800w.avif">
             <source type="image/webp" srcset="images/monstera-800w.webp">
-            <img src="images/monstera-800w.jpg"
+            <img class="photo__image" src="images/monstera-800w.jpg"
                  width="800" height="600"
                  alt="Монстера з великим розрізаним листям у горщику"
                  fetchpriority="high">
           </picture>
-          <figcaption>Монстера делікатесна в домашніх умовах</figcaption>
+          <figcaption class="photo__caption">Монстера делікатесна в домашніх умовах</figcaption>
         </figure>
  
         <p><strong>Монстера делікатесна</strong> – велика тропічна ліана родом із Центральної Америки. У кімнатних умовах вона виростає до трьох метрів і стає окрасою світлої вітальні чи офісу.</p>
@@ -78,54 +79,54 @@
  
       <section id="characteristics" aria-labelledby="characteristics-title">
         <h2 id="characteristics-title">Характеристики</h2>
-        <dl>
-          <dt>Вимоги до світла</dt>
-          <dd>Розсіяне світло</dd>
+        <dl class="specs">
+          <dt class="specs__term">Вимоги до світла</dt>
+          <dd class="specs__value">Розсіяне світло</dd>
  
-          <dt>Частота поливу</dt>
-          <dd>раз на <data value="7">7 днів</data></dd>
+          <dt class="specs__term">Частота поливу</dt>
+          <dd class="specs__value">раз на <data value="7">7 днів</data></dd>
  
-          <dt>Максимальна висота</dt>
-          <dd><data value="300">до 300 см</data></dd>
+          <dt class="specs__term">Максимальна висота</dt>
+          <dd class="specs__value"><data value="300">до 300 см</data></dd>
  
-          <dt>Найкращий час пересадки</dt>
-          <dd><time datetime="2027-04">квітень</time></dd>
+          <dt class="specs__term">Найкращий час пересадки</dt>
+          <dd class="specs__value"><time datetime="2027-04">квітень</time></dd>
  
-          <dt>Безпечна для тварин</dt>
-          <dd>Ні</dd>
+          <dt class="specs__term">Безпечна для тварин</dt>
+          <dd class="specs__value">Ні</dd>
         </dl>
       </section>
  
       <section id="seasons" aria-labelledby="seasons-title">
         <h2 id="seasons-title">Догляд за сезонами</h2>
-        <table>
-          <caption>Догляд за монстерою протягом року</caption>
+        <table class="data-table">
+          <caption class="data-table__caption">Догляд за монстерою протягом року</caption>
           <thead>
             <tr>
               <th scope="col">Сезон</th>
-              <th scope="col">Частота поливу</th>
+              <th class="data-table__num" scope="col">Частота поливу</th>
               <th scope="col">Освітлення</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">Весна</th>
-              <td>раз на <data value="7">7 днів</data></td>
+              <td class="data-table__num">раз на <data value="7">7 днів</data></td>
               <td>Розсіяне, біля східного вікна</td>
             </tr>
             <tr>
               <th scope="row">Літо</th>
-              <td>раз на <data value="5">5 днів</data></td>
+              <td class="data-table__num">раз на <data value="5">5 днів</data></td>
               <td>Розсіяне, притінення від прямого сонця</td>
             </tr>
             <tr>
               <th scope="row">Осінь</th>
-              <td>раз на <data value="10">10 днів</data></td>
+              <td class="data-table__num">раз на <data value="10">10 днів</data></td>
               <td>Розсіяне, ближче до вікна</td>
             </tr>
             <tr>
               <th scope="row">Зима</th>
-              <td>раз на <data value="14">14 днів</data></td>
+              <td class="data-table__num">раз на <data value="14">14 днів</data></td>
               <td>Максимум світла, за потреби фітолампа</td>
             </tr>
           </tbody>
@@ -135,39 +136,39 @@
       <section id="review" aria-labelledby="review-title">
         <h2 id="review-title">Відгук</h2>
         <p>Розкажіть, як вам доглядати за монстерою. Поля з позначкою «обов’язково» потрібно заповнити.</p>
-        <form id="review-form" action="details.html" method="get">
-          <fieldset>
-            <legend>Контактні дані</legend>
-            <p>
-              <label for="review-name">Ім’я</label>
-              <input id="review-name" name="authorName" type="text" maxlength="50" autocomplete="name">
+        <form class="form" id="review-form" action="details.html" method="get">
+          <fieldset class="form__group">
+            <legend class="form__legend">Контактні дані</legend>
+            <p class="form__field">
+              <label class="form__label" for="review-name">Ім’я</label>
+              <input class="form__control" id="review-name" name="authorName" type="text" maxlength="50" autocomplete="name">
             </p>
-            <p>
-              <label for="review-email">Електронна пошта (обов’язково)</label>
-              <input id="review-email" name="email" type="email" required maxlength="100" autocomplete="email">
+            <p class="form__field">
+              <label class="form__label" for="review-email">Електронна пошта (обов’язково)</label>
+              <input class="form__control" id="review-email" name="email" type="email" required maxlength="100" autocomplete="email">
             </p>
-            <p>
-              <label for="review-phone">Телефон</label>
-              <input id="review-phone" name="phone" type="tel" autocomplete="tel" pattern="\+380[0-9]{9}"
+            <p class="form__field">
+              <label class="form__label" for="review-phone">Телефон</label>
+              <input class="form__control" id="review-phone" name="phone" type="tel" autocomplete="tel" pattern="\+380[0-9]{9}"
                      aria-describedby="review-phone-hint">
             </p>
-            <p id="review-phone-hint">Необов’язково. Формат: +380 і 9 цифр без пробілів, наприклад +380501234567.</p>
+            <p class="form__hint" id="review-phone-hint">Необов’язково. Формат: +380 і 9 цифр без пробілів, наприклад +380501234567.</p>
           </fieldset>
  
-          <fieldset>
-            <legend>Оцінка рослини (обов’язково)</legend>
-            <p>
-              <label><input type="radio" name="rating" value="1" required> 1</label>
-              <label><input type="radio" name="rating" value="2"> 2</label>
-              <label><input type="radio" name="rating" value="3"> 3</label>
-              <label><input type="radio" name="rating" value="4"> 4</label>
-              <label><input type="radio" name="rating" value="5"> 5</label>
+          <fieldset class="form__group">
+            <legend class="form__legend">Оцінка рослини (обов’язково)</legend>
+            <p class="form__choices">
+              <label class="form__choice"><input class="form__radio" type="radio" name="rating" value="1" required> 1</label>
+              <label class="form__choice"><input class="form__radio" type="radio" name="rating" value="2"> 2</label>
+              <label class="form__choice"><input class="form__radio" type="radio" name="rating" value="3"> 3</label>
+              <label class="form__choice"><input class="form__radio" type="radio" name="rating" value="4"> 4</label>
+              <label class="form__choice"><input class="form__radio" type="radio" name="rating" value="5"> 5</label>
             </p>
           </fieldset>
  
-          <p>
-            <label for="review-difficulty">Складність догляду</label>
-            <input id="review-difficulty" name="careDifficulty" type="range" min="1" max="5" step="1" value="3"
+          <p class="form__field">
+            <label class="form__label" for="review-difficulty">Складність догляду</label>
+            <input class="form__control form__control--range" id="review-difficulty" name="careDifficulty" type="range" min="1" max="5" step="1" value="3"
                    list="difficulty-marks" aria-describedby="review-difficulty-hint">
             <datalist id="difficulty-marks">
               <option value="1" label="легко"></option>
@@ -175,39 +176,39 @@
               <option value="5" label="складно"></option>
             </datalist>
           </p>
-          <p id="review-difficulty-hint">Від 1 – дуже легко до 5 – дуже складно.</p>
+          <p class="form__hint" id="review-difficulty-hint">Від 1 – дуже легко до 5 – дуже складно.</p>
  
-          <p>
-            <label for="review-comment">Коментар (обов’язково)</label>
-            <textarea id="review-comment" name="comment" required minlength="20" maxlength="1000" rows="5" cols="50"
+          <p class="form__field">
+            <label class="form__label" for="review-comment">Коментар (обов’язково)</label>
+            <textarea class="form__control" id="review-comment" name="comment" required minlength="20" maxlength="1000" rows="5" cols="50"
                       aria-describedby="review-comment-hint"></textarea>
           </p>
-          <p id="review-comment-hint">Від 20 до 1000 символів.</p>
+          <p class="form__hint" id="review-comment-hint">Від 20 до 1000 символів.</p>
  
-          <p>
-            <input id="review-agree" name="agree" type="checkbox" value="yes" required>
-            <label for="review-agree">Погоджуюся з правилами публікації відгуків (обов’язково)</label>
+          <p class="form__check">
+            <input class="form__checkbox" id="review-agree" name="agree" type="checkbox" value="yes" required>
+            <label class="form__check-label" for="review-agree">Погоджуюся з правилами публікації відгуків (обов’язково)</label>
           </p>
  
-          <p>
-            <button type="submit">Надіслати відгук</button>
+          <p class="form__actions">
+            <button class="button button--primary" type="submit">Надіслати відгук</button>
           </p>
         </form>
       </section>
  
-      <p><a href="index.html">Повернутися до каталогу</a></p>
+      <p class="back-link"><a href="index.html">Повернутися до каталогу</a></p>
     </article>
   </main>
  
-  <footer id="contacts">
-    <h2>Контактна інформація</h2>
-    <address>
+  <footer class="site-footer" id="contacts">
+    <h2 class="site-footer__title">Контактна інформація</h2>
+    <address class="site-footer__address">
       <p>Розробник: Чирва Данііл, група ІН-42/1</p>
       <p>Email: <a href="mailto:dominatorunior@gmail.com">dominatorunior@gmail.com</a></p>
       <p>GitHub: <a href="https://github.com/chyrva79-tech/WEB-houseplants-project">chyrva79-tech/WEB-houseplants-project</a></p>
     </address>
-    <p><a href="admin.html">Адміністрування</a></p>
-    <p>&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
+    <p class="site-footer__admin"><a href="admin.html">Адміністрування</a></p>
+    <p class="site-footer__copy">&copy; <time datetime="2026">2026</time> Кімнатні рослини. Усі права захищено.</p>
   </footer>
 </body>
 </html>
