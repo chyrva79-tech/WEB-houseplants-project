@@ -80,3 +80,783 @@
   }
 }
  
+/* ---------- 3. Базові стилі документа ---------- */
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+ 
+  h1,
+  h2,
+  h3 {
+    margin-block: var(--space-l) var(--space-s);
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    color: var(--color-accent-hover);
+  }
+ 
+  h1 {
+    font-size: 2.25rem;
+  }
+ 
+  h2 {
+    font-size: 1.6rem;
+  }
+ 
+  h3 {
+    font-size: 1.25rem;
+  }
+ 
+  p {
+    margin-block: 0 var(--space-m);
+  }
+ 
+  a {
+    color: var(--color-accent);
+    text-underline-offset: 0.2em;
+  }
+ 
+  a:hover {
+    color: var(--color-accent-hover);
+    text-decoration-thickness: 2px;
+  }
+ 
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+ 
+  ul,
+  ol {
+    margin-block: 0 var(--space-m);
+    padding-inline-start: var(--space-l);
+  }
+ 
+  li + li {
+    margin-block-start: var(--space-xs);
+  }
+ 
+  ol ::marker {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+ 
+  table {
+    border-collapse: collapse;
+  }
+ 
+  th,
+  td {
+    padding: var(--space-s) var(--space-m);
+    text-align: start;
+    vertical-align: top;
+  }
+ 
+  address {
+    font-style: normal;
+  }
+ 
+  strong {
+    color: var(--color-accent-hover);
+  }
+ 
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+}
+ 
+/* ---------- 4. Компоненти ---------- */
+@layer components {
+ 
+  /* --- Посилання для переходу до вмісту --- */
+  .skip-link {
+    position: absolute;
+    inset-block-start: var(--space-s);
+    inset-inline-start: var(--space-s);
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--radius-s);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    transform: translateY(-300%);
+  }
+ 
+  .skip-link:focus-visible {
+    transform: none;
+  }
+ 
+  /* --- Шапка --- */
+  .site-header {
+    padding: var(--space-m) var(--space-l);
+    border-block-end: 4px solid var(--color-accent);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+ 
+  .brand {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+ 
+  .brand__link {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+  }
+ 
+  .brand__logo {
+    vertical-align: middle;
+    margin-inline-end: var(--space-xs);
+  }
+ 
+  .site-header__owner {
+    margin-block: var(--space-xs) var(--space-s);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+ 
+  /* --- Головна навігація --- */
+  .site-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+ 
+  .site-nav__item {
+    display: inline-block;
+    margin-block: 0;
+    margin-inline-end: var(--space-s);
+  }
+ 
+  .site-nav__link {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-m);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    text-decoration: none;
+  }
+ 
+  .site-nav__link:hover {
+    background-color: var(--color-accent-soft);
+  }
+ 
+  .site-nav__link[aria-current="page"] {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+ 
+  /* --- Пошук --- */
+  .search__form {
+    margin-block-start: var(--space-s);
+  }
+ 
+  .search__label {
+    margin-inline-end: var(--space-s);
+    font-weight: 600;
+  }
+ 
+  .search__input {
+    inline-size: 16rem;
+    max-inline-size: 100%;
+    padding: var(--space-xs) var(--space-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-s);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+ 
+  .search__input::placeholder {
+    color: var(--color-text-muted);
+  }
+ 
+  /* --- Основна область --- */
+  .page {
+    padding: var(--space-m) var(--space-l) var(--space-xl);
+  }
+ 
+  .page__lead {
+    max-inline-size: 65ch;
+    padding: var(--space-m);
+    border-inline-start: 4px solid var(--color-accent);
+    border-radius: var(--radius-s);
+    background-color: var(--color-accent-soft);
+  }
+ 
+  .page--text p,
+  .page--text li {
+    max-inline-size: 65ch;
+  }
+ 
+  /* --- Хлібні крихти --- */
+  .breadcrumbs__list {
+    margin: 0 0 var(--space-m);
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+  }
+ 
+  .breadcrumbs__item {
+    display: inline;
+  }
+ 
+  .breadcrumbs__item + .breadcrumbs__item::before {
+    content: "›";
+    margin-inline: var(--space-s);
+    color: var(--color-text-muted);
+  }
+ 
+  .breadcrumbs__link[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+  }
+ 
+  /* --- Категорії й сортування в каталозі --- */
+  .category-nav__list {
+    margin-block-end: var(--space-m);
+    padding: 0;
+    list-style: none;
+  }
+ 
+  .category-nav__item {
+    display: inline-block;
+    margin-block: 0 var(--space-s);
+    margin-inline-end: var(--space-xs);
+  }
+ 
+  .category-nav__link {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-surface);
+    text-decoration: none;
+  }
+ 
+  .category-nav__link[aria-current="page"] {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+ 
+  .sort-form {
+    margin-block-end: var(--space-l);
+  }
+ 
+  .sort-form__label {
+    margin-inline-end: var(--space-s);
+    font-weight: 600;
+  }
+ 
+  .sort-form__select {
+    padding: var(--space-xs) var(--space-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-s);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+ 
+  /* --- Картка рослини --- */
+  .catalog-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+ 
+  .catalog-list__item {
+    margin-block: 0 var(--space-l);
+  }
+ 
+  .plant-card {
+    max-inline-size: 24rem;
+    padding: var(--space-m);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+ 
+  .plant-card__title {
+    margin-block: 0 var(--space-s);
+    font-size: 1.4rem;
+  }
+ 
+  .plant-card__link {
+    text-decoration: none;
+  }
+ 
+  .plant-card__link:hover {
+    text-decoration: underline;
+  }
+ 
+  .plant-card__media {
+    margin-block-end: var(--space-s);
+  }
+ 
+  .plant-card__image {
+    display: block;
+    inline-size: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-s);
+  }
+ 
+  .plant-card__badge {
+    display: inline-block;
+    margin-block-end: var(--space-s);
+    padding: var(--space-xs) var(--space-s);
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+ 
+  .plant-card__badge[data-light="bright"] {
+    background-color: var(--badge-bright-bg);
+    color: var(--badge-bright-text);
+  }
+ 
+  .plant-card__badge[data-light="diffused"] {
+    background-color: var(--badge-diffused-bg);
+    color: var(--badge-diffused-text);
+  }
+ 
+  .plant-card__badge[data-light="shade"] {
+    background-color: var(--badge-shade-bg);
+    color: var(--badge-shade-text);
+  }
+ 
+  .plant-card__water {
+    margin-block-end: var(--space-xs);
+  }
+ 
+  .plant-card__number {
+    color: var(--color-accent);
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+ 
+  .plant-card__meta {
+    margin-block-end: var(--space-xs);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+ 
+  .plant-card__pet {
+    margin-block: var(--space-s);
+    font-weight: 600;
+  }
+ 
+  .plant-card__pet[data-pet-safe="true"]::before {
+    content: "✔ ";
+    color: var(--color-accent);
+  }
+ 
+  .plant-card__pet[data-pet-safe="false"] {
+    color: var(--color-warning);
+  }
+ 
+  .plant-card__pet[data-pet-safe="false"]::before {
+    content: "⚠ ";
+  }
+ 
+  .plant-card__text {
+    margin-block-end: 0;
+  }
+ 
+  /* картка з рослиною, небезпечною для тварин */
+  .plant-card:has(.plant-card__pet[data-pet-safe="false"]) {
+    border-inline-start: 6px solid var(--color-warning);
+    background-color: var(--color-warning-bg);
+  }
+ 
+  /* --- Про мене та цікаві факти --- */
+  .about,
+  .facts {
+    max-inline-size: 65ch;
+    margin-block-start: var(--space-l);
+    padding: var(--space-m) var(--space-l);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+ 
+  .facts {
+    margin-inline: var(--space-l);
+  }
+ 
+  .about__photo {
+    border: 4px solid var(--color-accent-soft);
+    border-radius: var(--radius-m);
+  }
+ 
+  .facts__list li::marker {
+    content: "🌿 ";
+  }
+ 
+  /* --- Сторінка деталей --- */
+  .toc {
+    max-inline-size: 65ch;
+    margin-block-end: var(--space-l);
+    padding: var(--space-m);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-m);
+  }
+ 
+  .toc__title {
+    margin-block-end: var(--space-xs);
+    font-weight: 700;
+  }
+ 
+  .toc__list {
+    margin: 0;
+  }
+ 
+  .photo {
+    max-inline-size: 40rem;
+    margin-inline: 0;
+  }
+ 
+  .photo__image {
+    display: block;
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-card);
+  }
+ 
+  .photo__caption {
+    margin-block-start: var(--space-s);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+ 
+  .back-link a::before {
+    content: "← ";
+  }
+ 
+  /* --- Список характеристик --- */
+  .specs {
+    max-inline-size: 36rem;
+    margin: 0;
+    padding: var(--space-m);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+ 
+  .specs__term {
+    padding-block-start: var(--space-s);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+ 
+  .specs__term:not(:first-child) {
+    border-block-start: 1px solid var(--color-accent-soft);
+  }
+ 
+  .specs__value {
+    margin: 0 0 var(--space-s);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+ 
+  /* --- Таблиця даних --- */
+  .data-table {
+    min-inline-size: 60%;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+  }
+ 
+  .data-table__caption {
+    padding-block: var(--space-s);
+    font-weight: 700;
+    text-align: start;
+  }
+ 
+  .data-table thead th {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+ 
+  .data-table tbody tr:nth-child(even) {
+    background-color: var(--color-row);
+  }
+ 
+  .data-table tbody th {
+    font-weight: 700;
+  }
+ 
+  .data-table th,
+  .data-table td {
+    border-block-end: 1px solid var(--color-accent-soft);
+  }
+ 
+  .data-table .data-table__num {
+    text-align: end;
+    font-variant-numeric: tabular-nums;
+  }
+ 
+  .data-table__pet[data-pet-safe="false"] {
+    color: var(--color-warning);
+    font-weight: 700;
+  }
+ 
+  /* --- Відео та часті запитання --- */
+  .video {
+    border-radius: var(--radius-m);
+  }
+ 
+  .faq__item {
+    max-inline-size: 65ch;
+    margin-block-end: var(--space-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+  }
+ 
+  .faq__question {
+    padding: var(--space-s) var(--space-m);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+  }
+ 
+  .faq__question::before {
+    content: "+";
+    display: inline-block;
+    inline-size: 1.5em;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+ 
+  .faq__item[open] .faq__question::before {
+    content: "−";
+  }
+ 
+  .faq__item[open] .faq__question {
+    border-block-end: 1px solid var(--color-accent-soft);
+  }
+ 
+  .faq__answer {
+    margin: 0;
+    padding: var(--space-s) var(--space-m) var(--space-m);
+  }
+ 
+  .author-card {
+    max-inline-size: 65ch;
+    padding: var(--space-m);
+    border-inline-start: 4px solid var(--color-accent);
+    background-color: var(--color-surface);
+  }
+ 
+  /* --- Підвал --- */
+  .site-footer {
+    margin-block-start: var(--space-xl);
+    padding: var(--space-l);
+    border-block-start: 4px solid var(--color-accent);
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+ 
+  .site-footer__title {
+    margin-block-start: 0;
+    font-size: 1.25rem;
+  }
+ 
+  .site-footer__address p {
+    margin-block-end: var(--space-xs);
+  }
+ 
+  .site-footer__admin a[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+ 
+  .site-footer__copy {
+    margin: var(--space-m) 0 0;
+    font-size: 0.85rem;
+  }
+}
+ 
+/* ---------- 5. Форми та кнопки ---------- */
+@layer components {
+  .form {
+    max-inline-size: 36rem;
+  }
+ 
+  .form__group {
+    margin: 0 0 var(--space-l);
+    padding: var(--space-m) var(--space-l);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+  }
+ 
+  .form__legend {
+    padding-inline: var(--space-s);
+    color: var(--color-accent-hover);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+ 
+  .form__field {
+    margin-block-end: var(--space-m);
+  }
+ 
+  .form__label {
+    display: block;
+    margin-block-end: var(--space-xs);
+    font-weight: 600;
+  }
+ 
+  .form__control {
+    display: block;
+    inline-size: 100%;
+    padding: var(--space-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-s);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+ 
+  .form__control--range {
+    padding-inline: 0;
+    border: 0;
+    accent-color: var(--color-accent);
+  }
+ 
+  textarea.form__control {
+    resize: vertical;
+  }
+ 
+  /* від'ємний відступ «з'їдає» частину відступу поля завдяки схлопуванню */
+  .form__field + .form__hint {
+    margin-block-start: calc(-1 * var(--space-s));
+  }
+ 
+  .form__hint {
+    margin-block-end: var(--space-m);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+ 
+  .form__choices {
+    margin: 0;
+  }
+ 
+  .form__choice {
+    display: inline-block;
+    margin-inline-end: var(--space-m);
+    font-weight: 600;
+  }
+ 
+  .form__radio,
+  .form__checkbox {
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+    vertical-align: middle;
+    accent-color: var(--color-accent);
+  }
+ 
+  .form__check-label {
+    margin-inline-start: var(--space-xs);
+  }
+ 
+  /* некоректне значення: колір + товщина рамки + значок */
+  .form__control:user-invalid {
+    border: 2px solid var(--color-error);
+  }
+ 
+  .form__field:has(.form__control:user-invalid) .form__label {
+    color: var(--color-error);
+  }
+ 
+  .form__field:has(.form__control:user-invalid) .form__label::after {
+    content: " ✖";
+  }
+ 
+  .form__field:has(.form__control:user-invalid) + .form__hint {
+    color: var(--color-error);
+    font-weight: 600;
+  }
+ 
+  .form__actions {
+    margin-block-start: var(--space-m);
+  }
+ 
+  /* --- Кнопки --- */
+  .button {
+    display: inline-block;
+    margin-inline-end: var(--space-s);
+    padding: var(--space-s) var(--space-l);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    cursor: pointer;
+  }
+ 
+  .button--primary {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+ 
+  .button--primary:hover {
+    border-color: var(--color-accent-hover);
+    background-color: var(--color-accent-hover);
+  }
+ 
+  .button--secondary {
+    background-color: var(--color-surface);
+    color: var(--color-accent);
+  }
+ 
+  .button--secondary:hover {
+    background-color: var(--color-accent-soft);
+  }
+ 
+  .button:focus-visible {
+    outline-offset: 3px;
+  }
+}
+ 
+/* ---------- 6. Темна тема: лише нові значення токенів ---------- */
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #111a13;
+      --color-surface: #1a271c;
+      --color-text: #e5eee3;
+      --color-text-muted: #a8baa9;
+      --color-accent: #81cf87;
+      --color-accent-hover: #a9e3ad;
+      --color-accent-soft: #26402b;
+      --color-on-accent: #0e1d10;
+      --color-border: #7f9a83;
+      --color-focus: #ffb547;
+      --color-error: #ff8a80;
+      --color-row: #213125;
+      --color-warning: #ffc266;
+      --color-warning-bg: #2e2414;
+ 
+      --badge-bright-bg: #4a3c0d;
+      --badge-bright-text: #ffe08a;
+      --badge-diffused-bg: #23452a;
+      --badge-diffused-text: #bde8c0;
+      --badge-shade-bg: #2a3646;
+      --badge-shade-text: #cad7e6;
+ 
+      --shadow-card: 0 2px 12px rgb(0 0 0 / 45%);
+    }
+  }
+}
+ 
